@@ -29,7 +29,7 @@ class Companies extends CI_Controller {
 				$data['companyname'] = $data['company_item']['companyname'];
 
 				$this->load->view('templates/header', $data);
-				$this->load->view('news/view', $data);
+				$this->load->view('companies/view', $data);
 				$this->load->view('templates/footer');
 		}
 

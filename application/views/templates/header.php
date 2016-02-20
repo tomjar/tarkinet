@@ -1,6 +1,6 @@
 <html>
         <head>
-                <title>CodeIgniter Tutorial</title>
+                <title>Bills and Payment</title>
 				<meta charset="utf-8">
 				<meta http-equiv="x-ua-compatible" content="ie=edge">
 				<title></title>
@@ -17,6 +17,22 @@
 				<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 				<script src="../js/bootstrap.js"></script>
         </head>
+		<div class="col-lg-12">
+		<img src="../images/logo_1.png">
+		</div>
+		<div class="clearfix"></div>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="<?php echo site_url('home/'); ?>">Tarkinet</a>
+			</div>
+			<ul class="nav navbar-nav">
+			  <li><a href="<?php echo site_url('companies/'); ?>">Companies</a></li>
+			  <li><a href="<?php echo site_url('bills/'); ?>">Bills</a></li>
+			  <li><a href="#">TODO: Journal Entries page</a></li>
+			</ul>
+		  </div>
+		</nav>
         <body>
 
                 <h1><?php echo $title; ?></h1>
