@@ -1,5 +1,7 @@
 	<!-- Modal popup for adding a new company -->
+	<div class="alert alert-danger">
 	<?php echo validation_errors(); ?>
+	</div>
 	<?php echo form_open('companies/create'); ?>
 		<div class="col-1g-12">
 			<div class="col-lg-12">
