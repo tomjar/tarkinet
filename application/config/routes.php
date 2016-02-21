@@ -51,10 +51,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 /* bills routing info */
+$route['bills/create'] = 'bills/create';
 $route['bills/(:any)'] = 'bills/view/$1';
 $route['bills'] = 'bills';
 
 /* companies routing info */
+$route['companies/create'] = 'companies/create';
 $route['companies/(:any)'] = 'companies/view/$1';
 $route['companies'] = 'companies';
 

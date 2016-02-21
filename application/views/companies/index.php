@@ -1,22 +1,6 @@
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.2.0/css/colReorder.dataTables.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.0.1/css/select.dataTables.min.css"/>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.colVis.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/colreorder/1.2.0/js/dataTables.colReorder.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/select/1.0.1/js/dataTables.select.min.js"></script>
-
 <script type="text/javascript">
 $(document).ready(function () {
- 
+	
 // This function gets todays date, this is used when exporting the table info
 function getTodaysTimeStamp() {
 	var now = new Date();
@@ -96,49 +80,57 @@ $("#companyTable").DataTable({
 });
 </script>
 <div class="col-lg-12">
-	<table id="companyTable" class="">
-		<thead>
-			<tr>
-				<th>Company Name</th>
-				<th>Company Description</th>
-				<th>Company Address</th>
-				<th>Company Phone</th>
-				<th>Company City</th>
-				<th>Company State</th>
-				<th>Company Zip Code</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-		<?php foreach ($Companies as $company_item): ?>
+
+		<div class="col-lg-12">
+	<!-- Trigger the modal with a button -->
+	<a href="<?php echo site_url('companies/create'); ?>" class="btn btn-success btn-lg" style="float:right;">Add Company</a>
+	</div>
+	<div class="clearfix"></div>
+	<div class="panel panel-default">
+		<table id="companyTable">
+			<thead>
 				<tr>
-					<td>
-						<?php echo $company_item['CompanyName']; ?>
-					</td>
-					<td>
-							<?php echo $company_item['CompanyDescription']; ?>
-					</td>
-								<td>
-							<?php echo $company_item['CompanyAddress']; ?>
-					</td>
-								<td>
-							<?php echo $company_item['CompanyPhone']; ?>
-					</td>
-								<td>
-							<?php echo $company_item['CompanyCity']; ?>
-					</td>
-								<td>
-							<?php echo $company_item['CompanyState']; ?>
-					</td>
-								<td>
-							<?php echo $company_item['CompanyZipCode']; ?>
-					</td>
-					<td>
-						<p>
-						<a href="<?php echo site_url('companies/'.$company_item['CompanyID']); ?>">View Company</a></p>
-					</td>
-		<?php endforeach; ?>
-		</tbody>
-	</table
+					<th>Company Name</th>
+					<th>Company Description</th>
+					<th>Company Address</th>
+					<th>Company Phone</th>
+					<th>Company City</th>
+					<th>Company State</th>
+					<th>Company Zip Code</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php foreach ($Companies as $company_item): ?>
+					<tr>
+						<td>
+							<?php echo $company_item['CompanyName']; ?>
+						</td>
+						<td>
+								<?php echo $company_item['CompanyDescription']; ?>
+						</td>
+									<td>
+								<?php echo $company_item['CompanyAddress']; ?>
+						</td>
+									<td>
+								<?php echo $company_item['CompanyPhone']; ?>
+						</td>
+									<td>
+								<?php echo $company_item['CompanyCity']; ?>
+						</td>
+									<td>
+								<?php echo $company_item['CompanyState']; ?>
+						</td>
+									<td>
+								<?php echo $company_item['CompanyZipCode']; ?>
+						</td>
+						<td>
+							<p>
+							<a href="<?php echo site_url('companies/'.$company_item['CompanyID']); ?>">View Company</a></p>
+						</td>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
 </div>
 

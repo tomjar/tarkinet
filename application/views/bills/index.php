@@ -1,19 +1,3 @@
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.2.0/css/colReorder.dataTables.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.0.1/css/select.dataTables.min.css"/>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.colVis.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/colreorder/1.2.0/js/dataTables.colReorder.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/select/1.0.1/js/dataTables.select.min.js"></script>
-
 <script type="text/javascript">
 $(document).ready(function () {
  
@@ -97,45 +81,52 @@ $("#billTable").DataTable({
 });
 </script>
  <div class="col-lg-12">
-<table id="billTable" class="">
-	<thead>
-		<tr>
-			<th>Bill Name</th>
-			<th>Bill Cost</th>
-			<th>Bill Due Date</th>
-			<th>Bill Auto Renews?</th>
-			<th>Is Bill Payed?</th>
-			<th>Bill Payed Date</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($Bills as $bill_item): ?>
+ 	<div class="col-lg-12">
+		<!-- Trigger the modal with a button -->
+		<a href="<?php echo site_url('bills/create'); ?>" class="btn btn-success btn-lg" style="float:right;">Add Bill</a>
+	</div>
+	<div class="clearfix"></div>
+	<div class="panel panel-default">	
+	<table id="billTable" class="">
+		<thead>
 			<tr>
-				<td>
-					<?php echo $bill_item['BillName']; ?>
-				</td>
-				<td>
-						<?php echo $bill_item['BillCost']; ?>
-				</td>
-				<td>
-						<?php echo $bill_item['BillDueDate']; ?>
-				</td>
-				<td>
-						<?php echo $bill_item['IsBillAutoPayment']; ?>
-				</td>
-				<td>
-						<?php echo $bill_item['IsBillPayed']; ?>
-				</td>
-				<td>
-						<?php echo $bill_item['BillPayedDate']; ?>
-				</td>
-				<td>
-					<p>
-					<a href="<?php echo site_url('companies/'.$bill_item['CompanyID']); ?>">View Company</a></p>
-				</td>
-	<?php endforeach; ?>
-	</tbody>
-</table
+				<th>Bill Name</th>
+				<th>Bill Cost</th>
+				<th>Bill Due Date</th>
+				<th>Bill Auto Renews?</th>
+				<th>Is Bill Payed?</th>
+				<th>Bill Payed Date</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php foreach ($Bills as $bill_item): ?>
+				<tr>
+					<td>
+						<?php echo $bill_item['BillName']; ?>
+					</td>
+					<td>
+							<?php echo $bill_item['BillCost']; ?>
+					</td>
+					<td>
+							<?php echo $bill_item['BillDueDate']; ?>
+					</td>
+					<td>
+							<?php echo $bill_item['IsBillAutoPayment']; ?>
+					</td>
+					<td>
+							<?php echo $bill_item['IsBillPayed']; ?>
+					</td>
+					<td>
+							<?php echo $bill_item['BillPayedDate']; ?>
+					</td>
+					<td>
+						<p>
+						<a href="<?php echo site_url('bills/'.$bill_item['BillID']); ?>">View Bill</a></p>
+					</td>
+		<?php endforeach; ?>
+		</tbody>
+	</table
+</div>
 </div>
 
